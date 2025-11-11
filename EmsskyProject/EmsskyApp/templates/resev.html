@@ -1,0 +1,291 @@
+{% extends "layout.html" %} {% load static %} {% block styles %}
+<link rel="stylesheet" href="{% static 'styles/home.css' %}" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+/>
+{% endblock %} {% block content %}
+<!-- ===== Hero Carousel ===== -->
+<section
+  id="carouselExampleControls"
+  class="home-hero carousel slide"
+  data-bs-ride="carousel"
+  data-bs-interval="4000"
+>
+  <div class="hero-accent"></div>
+  <div class="carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <div class="hero-container">
+        <div class="hero-text">
+          <p class="hero-tagline mt-4">
+            <i class="bi bi-stars"></i> Empowering voices & breaking barriers
+          </p>
+          <h1>
+            <span class="highlight">Empowering</span> Creativity & Technology
+          </h1>
+          <p class="hero-description">
+            EMS SKYNET Krea8tive Concept and Computer Institute offers
+            professional printing, branding, and ICT training to help
+            individuals and businesses grow in the digital world.
+          </p>
+          <a href="{% url 'services' %}" class="hero-button"
+            >Explore Our Services</a
+          >
+        </div>
+        <div class="hero-image-wrapper">
+          <img
+            src="{% static 'assete/image-logo.png' %}"
+            alt="EMS Skynet Creative"
+            class="hero-image img-fluid"
+            loading="lazy"
+          />
+          <div class="hero-glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <div class="hero-container">
+        <div class="hero-text">
+          <p class="hero-tagline mt-4">
+            <i class="bi bi-lightning-charge"></i> Powering ideas through
+            innovation
+          </p>
+          <h1><span class="highlight">Innovate</span> Learn & Grow</h1>
+          <p class="hero-description">
+            We empower individuals with digital skills and creative knowledge to
+            thrive in today’s tech-driven world.
+          </p>
+          <a href="{% url 'about' %}" class="hero-button">Learn More</a>
+        </div>
+        <div class="hero-image-wrapper">
+          <img
+            src="{% static 'assete/tech.png' %}"
+            alt="Innovation"
+            class="hero-image img-fluid"
+            loading="lazy"
+          />
+          <div class="hero-glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <div class="hero-container">
+        <div class="hero-text">
+          <p class="hero-tagline mt-4">
+            <i class="bi bi-lightning-charge"></i> Cyber Café & Business Centre
+          </p>
+          <h1><span class="highlight">Welcome to EMS</span> SKYNET</h1>
+          <p class="hero-description">
+            Whether you're a student burning the midnight oil, a professional
+            closing deals on the go, or a small business owner needing urgent
+            printing work, we’ve got you covered with blazing-fast internet,
+            modern workstations, and full-suite business services under one
+            roof.
+          </p>
+          <a href="{% url 'about' %}" class="hero-button">Learn More</a>
+        </div>
+        <div class="hero-image-wrapper">
+          <img
+            src="{% static 'assete/image-logo.png' %}"
+            alt="Cyber Café"
+            class="hero-image img-fluid"
+            loading="lazy"
+          />
+          <div class="hero-glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="carousel-item">
+      <div class="hero-container">
+        <div class="hero-text">
+          <p class="hero-tagline mt-4">
+            <i class="bi bi-lightning-charge"></i> blazing-fast internet &
+            business solutions
+          </p>
+          <h1><span class="highlight">Special Offer from </span> Spectranet</h1>
+          <p class="hero-description">
+            Regain your freedom with Spectranet’s unbeatable offer! Get 100GB of
+            data when you purchase the <strong>Freedom MiFi</strong> for only
+            <strong>₦19,999</strong> — down from ₦29,999. Experience unlimited
+            speed, data rollover, and 50% bonus data on renewals.<br /><br />
+            Visit Spectranet today and take your internet experience to the next
+            level.
+          </p>
+          <a
+            href="https://spectranet.com.ng/"
+            target="_blank"
+            class="hero-button"
+            >Visit Spectranet Website</a
+          >
+        </div>
+        <div class="hero-image-wrapper">
+          <img
+            src="{% static 'assete/special-offer.png' %}"
+            alt="Spectranet Special Offer"
+            class="hero-image img-fluid"
+            loading="lazy"
+          />
+          <div class="hero-glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="carousel-item" id="result">
+      <div class="hero-container">
+        <div class="hero-text">
+          <p class="hero-tagline mt-4">
+            <i class="bi bi-card-checklist"></i> Instant Result Checker Cards
+          </p>
+          <h1><span class="highlight">Buy</span> WAEC • NECO • NABTEB Cards</h1>
+          <p class="hero-description">
+            Get genuine result checker and registration cards instantly. Fast
+            delivery, verified pins, and 24/7 support — trusted by schools,
+            students, and agents nationwide.
+          </p>
+          <a href="{% url 'contact' %}" class="hero-button">Order Now</a>
+        </div>
+        <div class="hero-image-wrapper">
+          <img
+            src="{% static 'assete/result-checker.jpg' %}"
+            alt="Result Checker Cards"
+            class="hero-image img-fluid"
+            style="cursor: pointer"
+            data-bs-toggle="modal"
+            data-bs-target="#resultCheckerModal"
+            loading="lazy"
+          />
+          <div class="hero-glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="carousel-item">
+      <div class="hero-container">
+        <div class="hero-text">
+          <p class="hero-tagline">
+            <i class="bi bi-headphones"></i> Smart Gadgets & Accessories
+          </p>
+          <h1><span class="highlight">Quality</span> Tech You Can Trust</h1>
+          <p class="hero-description">
+            We sell premium tech accessories — headphones, chargers,
+            smartwatches, game controllers, speakers, and more from trusted
+            brands like <strong>Oraimo, JBL, Kodak</strong> and
+            <strong>VYRATEK</strong>. 100% genuine, tested, and affordable.
+          </p>
+          <a href="{% url 'contact' %}" class="hero-button">Shop Now</a>
+        </div>
+        <div class="hero-image-wrapper">
+          <img
+            id="slider"
+            src="{% static 'assete/Emssky_image1.jpg' %}"
+            alt="Electronics and Accessories"
+            class="hero-image img-fluid"
+            style="cursor: pointer"
+            data-bs-toggle="modal"
+            data-bs-target="#electronicsModal"
+          />
+          <div class="hero-glow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleControls"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleControls"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</section>
+
+<!-- Modals -->
+<div
+  class="modal fade"
+  id="resultCheckerModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <img
+        src="{% static 'assete/result-checker.jpg' %}"
+        class="img-fluid rounded shadow"
+        alt="Result Checker Full View"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="electronicsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <img
+        id="modalImage"
+        src=""
+        class="img-fluid rounded shadow"
+        alt="Electronics Full View"
+      />
+    </div>
+  </div>
+</div>
+
+{% block scripts %}
+<script>
+  const images7 = [
+    "{% static 'assete/product_images/AirPods_Max.png' %}",
+    "{% static 'assete/product_images/Gaming_destop.png' %}",
+    "{% static 'assete/product_images/image3.png' %}",
+    "{% static 'assete/product_images/image4.png' %}",
+    "{% static 'assete/product_images/multi-size-copy.jpg' %}",
+    "{% static 'assete/product_images/image5.png' %}",
+    "{% static 'assete/product_images/image10.png' %}",
+    "{% static 'assete/product_images/image7.png' %}",
+    "{% static 'assete/product_images/image8.png' %}",
+    "{% static 'assete/product_images/image9.png' %}",
+    "{% static 'assete/product_images/image14.png' %}",
+    "{% static 'assete/product_images/image18.png' %}",
+    "{% static 'assete/product_images/printing.jpg' %}",
+    "{% static 'assete/product_images/image17.png' %}",
+    "{% static 'assete/product_images/image15.png' %}",
+  ];
+
+  let index7 = 0;
+  const slider7 = document.getElementById("slider");
+  const modalImage = document.getElementById("modalImage");
+
+  if (slider7) {
+    setInterval(() => {
+      index7 = (index7 + 1) % images7.length;
+      slider7.src = images7[index7];
+    }, 2000);
+
+    slider7.addEventListener("click", () => {
+      if (modalImage) modalImage.src = slider7.src;
+    });
+  }
+</script>
+<script src="{% static 'javascript/index.js' %}"></script>
+<script src="{% static 'javascript/home.js' %}"></script>
+{% endblock %} {% endblock %}

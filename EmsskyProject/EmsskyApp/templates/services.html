@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% load static %} {% block styles %}
+<link rel="stylesheet" href="{% static 'styles/service.css' %}" />
+<!-- Bootstrap CSS -->
+
+{% endblock %} {% block content %}
+<header class="page-header mt-5">
+  <div class="brand-title section-title">EMS SKYNET — Product Catalog</div>
+  <div class="brand-sub">
+    Explore our complete range of ICT, office, and printing equipment. Click
+    “Order” to chat directly on WhatsApp.
+  </div>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search product or category..."
+    />
+  </div>
+</header>
+
+<main class="products-wrap" id="productsWrap"></main>
+
+<!-- Floating Spectranet Ad -->
+<div id="floatingAd" class="floating-ad">
+  <div class="ad-content">
+    <img
+      src="{% static 'assete/special-offer.png' %}"
+      alt="Spectranet Offer"
+      class="ad-img"
+    />
+    <div class="ad-text">
+      <h4>Spectranet Freedom MiFi</h4>
+      <p>Enjoy 100GB + 50% bonus data. Connect anywhere, anytime!</p>
+      <a
+        href="https://wa.me/2347030077529?text=Hello EMS Skynet, I'm interested in the Spectranet Freedom MiFi and data bundles."
+        target="_blank"
+        class="btn-whatsapp"
+        >💬 Chat & Order</a
+      >
+    </div>
+    <button
+      class="close-ad"
+      onclick="document.getElementById('floatingAd').style.display='none'"
+    >
+      ×
+    </button>
+  </div>
+</div>
+
+<script src="{% static 'javascript/service.js' %}"></script>
+{% endblock %}

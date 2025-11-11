@@ -1,0 +1,456 @@
+/* ===============================
+   EMS SKYNET ABOUT PAGE STYLES
+   Advanced 3D Motion Version
+   =============================== */
+
+/* ===== Root Variables ===== */
+:root {
+  --primary: #00ff7f;
+  --text-light: #e9f9f2;
+  --bg-dark: #0a0a0a;
+  --bg-darker: #080808;
+  --box-bg: rgba(255, 255, 255, 0.04);
+  --transition: all 0.4s ease;
+  --radius: 15px;
+  --shadow: 0 8px 25px rgba(0, 255, 127, 0.15);
+  --glow: 0 0 25px rgba(0, 255, 127, 0.4);
+
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 20% 20%, #0a0a0a 0%, #000 100%);
+  color: var(--text-light);
+  overflow-x: hidden;
+  perspective: 1200px;
+    position: relative;
+}
+
+
+/* ===== Page Fade + Tilt Animation ===== */
+body {
+  animation: pageEnter 1.5s ease forwards;
+}
+@keyframes pageEnter {
+  0% {
+    opacity: 0;
+    transform: rotateX(20deg) translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===== Section Wrapper (3D Layer) ===== */
+section {
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+  transition: var(--transition);
+}
+section:hover {
+  transform: translateZ(15px);
+}
+
+/* ===== About Highlight ===== */
+.about-highlight {
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
+  padding: 100px 20px;
+  border-bottom: 1px solid rgba(0, 255, 127, 0.1);
+  box-shadow: 0 0 60px rgba(0, 255, 127, 0.1);
+  transform: translateZ(0);
+  transition: var(--transition);
+}
+.about-highlight:hover {
+  transform: translateZ(25px) rotateX(4deg);
+}
+
+/* ===== Floating Hero Title ===== */
+.section-title {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  color:var(--primary);
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  text-shadow: var(--glow);
+  transform: translateZ(30px);
+  transition: var(--transition);
+}
+.section-title:hover {
+  transform: translateZ(50px) rotateY(6deg);
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background:var(--primary);
+  margin: 0.6rem auto 0;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 255, 127, 0.7);
+}
+
+/* ===== About Image ===== */
+.about-image {
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 255, 127, 0.15);
+  transition: transform 0.8s ease, box-shadow 0.6s ease;
+  transform: translateZ(0);
+}
+.about-image:hover {
+  transform: scale(1.07) rotateY(-5deg);
+  box-shadow: 0 0 60px rgba(0, 255, 127, 0.3);
+}
+
+/* ===== Why Choose Us Section ===== */
+.why-choose-us {
+  background: linear-gradient(180deg, rgba(175, 158, 158, 0.02), rgba(255, 255, 255, 0.03));
+  padding: 100px 20px;
+  border-top: 1px solid rgba(0, 255, 127, 0.1);
+  border-bottom: 1px solid rgba(0, 255, 127, 0.05);
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  transition: var(--transition);
+}
+.why-choose-us:hover {
+  transform: translateZ(30px);
+}
+
+/* ===== Advanced 3D Feature Cards ===== */
+.feature-card {
+  background: linear-gradient(160deg, rgba(0, 0, 0, 0.95), rgba(10, 10, 10, 0.85));
+  color: #eafaf1;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 255, 127, 0.15);
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0, 255, 127, 0.1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+/* Glow sweep line */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 255, 127, 0.05) 0%,
+    rgba(0, 255, 127, 0.25) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* Glow border */
+.feature-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(0, 255, 127, 0.25), transparent);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.feature-card:hover {
+  transform: rotateX(10deg) rotateY(-8deg) translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 255, 127, 0.35);
+  border-color: rgba(0, 255, 127, 0.5);
+}
+.feature-card:hover::before {
+  opacity: 1;
+  transform: translateX(50%) skewX(-25deg);
+}
+.feature-card:hover::after {
+  opacity: 1;
+}
+
+/* Card Body */
+.feature-card .card-body {
+  position: relative;
+  z-index: 2;
+  padding: 2.2rem 1.8rem;
+  transition: transform 0.4s ease;
+}
+.feature-card:hover .card-body {
+  transform: translateZ(35px);
+}
+
+/* Icons */
+.feature-card .icon-style {
+  font-size: 3rem;
+  color: #00ff7f;
+  margin-bottom: 1rem;
+  transition: transform 0.6s ease, color 0.4s ease, text-shadow 0.4s ease;
+}
+.feature-card:hover .icon-style {
+  color: #7cffb2;
+  transform: scale(1.3) rotateY(15deg);
+  text-shadow: 0 0 25px rgba(0, 255, 127, 0.6);
+}
+
+/* Text Animations */
+.feature-card h5,
+.feature-card p {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.feature-card:hover h5 {
+  transform: translateY(-5px);
+}
+.feature-card:hover p {
+  transform: translateY(5px);
+  opacity: 0.9;
+}
+
+/* ===== Founder Section ===== */
+.about-founder {
+  background: linear-gradient(180deg, #0a0a0a, #050505);
+  padding: 100px 20px;
+  border-top: 1px solid rgba(0, 255, 127, 0.1);
+  text-align: center;
+  box-shadow: inset 0 0 80px rgba(0, 255, 127, 0.05);
+  transform: translateZ(0);
+  transition: var(--transition);
+}
+.about-founder:hover {
+  transform: translateZ(20px) rotateY(3deg);
+}
+
+/* ================read more sections ================ */
+#moreText {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.4s ease;
+  padding-top: 0; /* start with 0 */
+}
+
+#moreText.show {
+  max-height: 2000px; /* adjust if needed */
+  padding-top: 1rem;
+}
+
+
+
+/* ===== Floating Glow Border for Whole Page ===== */
+/* body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  border: 2px solid rgba(0, 255, 127, 0.1);
+  pointer-events: none;
+  z-index: 999;
+  box-shadow: 0 0 50px rgba(0, 255, 127, 0.1);
+  animation: borderPulse 6s infinite alternate ease-in-out;
+} */
+/* @keyframes borderPulse {
+  0% {
+    box-shadow: 0 0 30px rgba(0, 255, 127, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 80px rgba(0, 255, 127, 0.4);
+  }
+}
+
+/* ===== Responsive ===== */
+/* @media (max-width: 992px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-highlight {
+    text-align: center;
+  }
+  .about-image {
+    margin-bottom: 2rem;
+  }
+  .feature-card {
+    transform: none !important;
+  }
+  .feature-card:hover {
+    transform: none;
+  }
+}  */
+
+
+
+/* @keyframes greenPulse {
+  0% { box-shadow: 0 0 10px rgba(0, 255, 127, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(0, 255, 127, 0.7); }
+  100% { box-shadow: 0 0 10px rgba(0, 255, 127, 0.3); }
+}
+
+.feature-btn {
+  animation: greenPulse 3s infinite;
+} */
+
+
+/* ===== Why Choose Us Section (Professional White 3D) ===== */
+.why-choose-us {
+  background: linear-gradient(180deg, #ffffff, #f9f9f9);
+  color: #0a0a0a;
+  padding: 100px 20px;
+  border-top: 1px solid rgba(0, 255, 127, 0.2);
+  border-bottom: 1px solid rgba(0, 255, 127, 0.15);
+  box-shadow: 0 0 40px rgba(0, 255, 127, 0.1);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: var(--transition);
+}
+
+/* Subtle gradient overlay for depth */
+.why-choose-us::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(0, 255, 127, 0.15), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 3D hover depth effect */
+.why-choose-us:hover {
+  transform: translateZ(30px);
+  box-shadow: 0 0 80px rgba(0, 255, 127, 0.2);
+}
+
+/* Section title on white background */
+.why-choose-us .section-title {
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(0, 255, 127, 0.3);
+}
+
+/* ===== Feature Cards on White ===== */
+.feature-card {
+  background: #fff;
+  color: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 127, 0.25);
+  box-shadow: 0 5px 20px rgba(0, 255, 127, 0.08);
+  transition: all 0.4s ease, box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* Glow border when hovering */
+.feature-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(0, 255, 127, 0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.feature-card:hover::after {
+  opacity: 1;
+}
+
+/* Card hover motion */
+.feature-card:hover {
+  transform: rotateX(8deg) rotateY(-8deg) translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Card content */
+.feature-card .card-body {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1.5rem;
+}
+
+/* Icon inside white cards */
+.feature-card .icon-style {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  transition: transform 0.5s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+.feature-card:hover .icon-style {
+  transform: scale(1.2) rotateY(10deg);
+  color: #0a0a0a;
+  text-shadow: 0 0 25px rgba(0, 255, 127, 0.6);
+}
+
+/* Headings and text */
+.feature-card h5 {
+  color: #111;
+  font-weight: 700;
+}
+.feature-card p {
+  color: #333;
+}
+
+/* Optional: subtle hover glow for button inside card */
+.feature-btn {
+  background: var(--primary);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  animation: greenPulse 3s infinite;
+}
+.feature-btn:hover {
+  background: #7cffb2;
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(0, 255, 127, 0.4);
+}
+
+
+
+
+
+/* ===================whatsap ======================= */
+.whatsapp-section {
+  position: fixed;
+  bottom: 90% !important;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-float {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #fff;
+  font-size: 30px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.whatsapp-float:hover {
+  background-color: #20ba5a;
+  transform: scale(1.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp-float:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.4);
+}
+

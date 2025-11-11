@@ -1,0 +1,129 @@
+{% extends "layout.html" %} {% load static %} {% block styles %}
+<link rel="stylesheet" href="{% static 'styles/about.css' %}" />
+
+{% endblock %} {% block content %}
+
+<!-- ===== About Highlight ===== -->
+<section class="about-highlight text-center text-light">
+  <div class="container py-5">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-5 mb-4 mb-md-0">
+        <img
+          src="{% static 'assete/author001.jpg' %}"
+          alt="Founder Photo"
+          class="img-fluid rounded-4 shadow-lg about-image"
+          loading="lazy"
+        />
+      </div>
+      <div class="col-md-7 text-start">
+        <h2 class="section-title">About EMS Skynet</h2>
+        <p class="lead mt-3">
+          Founded in 2018 by <strong>Emmanuel A. Festus</strong>,
+          <strong>EMS SKYNET KREA8TIVE CONCEPT</strong> stands among Nigeria’s
+          foremost ICT and business innovation hubs. We specialize in
+          <strong
+            >computer training, digital design, and business services</strong
+          >— empowering individuals and organizations through creativity and
+          technology.
+        </p>
+        <p>
+          Our mission is simple: <strong>make technology accessible</strong> and
+          provide reliable solutions that help businesses and learners grow.
+        </p>
+        <p id="moreText">
+          Over the years, EMS SKYNET has expanded into a full-service cyber café
+          and business center, offering printing, photocopying, document
+          processing, embassy form filling, and fast, secure internet access.
+          Our vision is to make every aspect of technology and business services
+          seamless and approachable for all clients. We believe that innovation
+          thrives in an environment where knowledge, creativity, and resources
+          are easily available. EMS SKYNET’s journey began with a single
+          computer and an unwavering vision: to make technology simple,
+          accessible, and meaningful for everyone. From humble beginnings, we
+          recognized that true progress comes from bridging knowledge gaps and
+          equipping individuals and businesses with the tools they need to
+          thrive in a digital world. Our classrooms are designed to foster
+          hands-on learning, our design studio crafts impactful digital
+          identities, and our business center ensures that every administrative
+          and technical need is handled efficiently. At EMS SKYNET, we believe
+          that technology should empower, not intimidate. Each project, training
+          session, or service we provide is guided by the principle of
+          excellence and a commitment to our clients’ growth. Our mission
+          remains clear:
+          <strong
+            >to inspire, educate, and equip people for a future where technology
+            and creativity go hand-in-hand.</strong
+          >
+        </p>
+        <button id="readMoreBtn" class="btn btn-success mt-2">Read More</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why Choose Us Section (Card Style) ===== -->
+<section class="why-choose-us text-center py-5">
+  <div class="container">
+    <h2 class="section-title mb-5 text-black">Why Choose EMS SKYNET</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card feature-card border-0 shadow-lg h-100">
+          <div class="card-body d-flex flex-column">
+            <i class="bi bi-laptop icon-style"></i>
+            <h5 class="fw-semibold mt-3">ICT Training</h5>
+            <p>Professional computer courses that make you job-ready.</p>
+            <a href="/contact" class="btn feature-btn mt-auto">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card feature-card border-0 shadow-lg h-100">
+          <div class="card-body d-flex flex-column">
+            <i class="bi bi-brush icon-style"></i>
+            <h5 class="fw-semibold mt-3">Creative Design</h5>
+            <p>From logos to complete brand identities.</p>
+            <a href="/contact" class="btn feature-btn mt-auto">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card feature-card border-0 shadow-lg h-100">
+          <div class="card-body d-flex flex-column">
+            <i class="bi bi-building icon-style"></i>
+            <h5 class="fw-semibold mt-3">Business Center</h5>
+            <p>Printing, photocopy, lamination, and documentation.</p>
+            <a href="/contact" class="btn feature-btn mt-auto">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card feature-card border-0 shadow-lg h-100">
+          <div class="card-body d-flex flex-column">
+            <i class="bi bi-wifi icon-style"></i>
+            <h5 class="fw-semibold mt-3">Cyber Café</h5>
+            <p>Fast, secure, and reliable internet access.</p>
+            <a href="/contact" class="btn feature-btn mt-auto">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Founder Story ===== -->
+<section class="about-founder text-center text-light py-5">
+  <div class="container">
+    <h3 class="fw-bold mb-3">Our Story</h3>
+    <p class="lead mx-auto" style="max-width: 750px">
+      EMS SKYNET started with a single computer and a powerful dream — to bridge
+      the gap between technology, design, and business. Today, we continue to
+      grow with one goal:
+      <strong>to empower people through innovation and creativity.</strong>
+    </p>
+  </div>
+</section>
+<!-- ===== Read More Script ===== -->
+{% endblock %}

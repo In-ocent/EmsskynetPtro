@@ -1,0 +1,352 @@
+/* =====================================
+   EMS SKYNET | Contact Page Styling
+   Modern Light Theme + Hero Wave + Animations
+   Scoped to .contact-page
+   ===================================== */
+
+.contact-page {
+  --accent: #28b745;
+  --accent-dark: #1f8441;
+  --text-dark: #222;
+  --text-muted: #555;
+  --bg-light: #ffffff;
+  --bg-soft: #f8f9fa;
+  --border: #e5e5e5;
+  --radius: 12px;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --color-primary: #28b745;          /* EMS Skynet Green */
+  --color-primary-dark: #1f662f;
+  --color-secondary: #444c4a;        /* Dark Slate Gray */
+  --color-background: #fefefe;       /* Almost white */
+  --color-muted: #6c757d;            /* Bootstrap muted gray */
+  --color-border: #e3e6e5;
+  --color-shadow: rgba(40, 183, 69, 0.15);
+  --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition-fast: 0.25s ease-in-out;
+
+  font-family: var(--font-base);
+  background-color: var(--color-background);
+  color: var(--color-secondary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== HERO SECTION ===== */
+.contact-page .contact-hero {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff;
+  padding: 100px 0 140px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.contact-page .contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.08), transparent 70%);
+}
+
+.contact-page .contact-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,224L60,229.3C120,235,240,245,360,234.7C480,224,600,192,720,160C840,128,960,96,1080,74.7C1200,53,1320,43,1380,37.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat bottom;
+  background-size: cover;
+  z-index: 3;
+}
+
+.contact-page .contact-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-page .hero-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 18px;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-page .contact-hero h1 {
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 12px;
+  letter-spacing: 0.6px;
+}
+
+.contact-page .contact-hero p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* =============================
+   Container & Section Padding
+============================= */
+.contact-page .container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem 1rem;
+}
+
+.contact-page .section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* =============================
+   Typography
+============================= */
+.contact-page h2, 
+.contact-page h3, 
+.contact-page h4, 
+.contact-page h5 {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+}
+
+.contact-page h2 {
+  font-size: 2.25rem;
+}
+
+.contact-page h3 {
+  font-size: 1.75rem;
+}
+
+.contact-page h4 {
+  font-size: 1.3rem;
+}
+
+.contact-page h5 {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-page p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+}
+
+.contact-page ul {
+  padding-left: 1.2rem;
+  color: var(--color-secondary);
+}
+
+.contact-page small {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* =============================
+   Contact Info Card
+============================= */
+.contact-page .contact-info-card {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  border: 1px solid var(--color-border);
+  transition: box-shadow var(--transition-fast);
+}
+
+.contact-page .contact-info-card:hover,
+.contact-page .contact-info-card.animate-on-scroll.visible {
+  box-shadow: 0 8px 24px rgba(40, 183, 69, 0.3);
+}
+
+.contact-page .contact-info-card hr {
+  border: 0;
+  height: 1px;
+  background: var(--color-border);
+  margin: 2rem 0;
+}
+
+/* =============================
+   Contact Form
+============================= */
+.contact-page .contact-form {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  border: 1px solid var(--color-border);
+  transition: box-shadow var(--transition-fast);
+}
+
+.contact-page .contact-form:hover,
+.contact-page .contact-form.animate-on-scroll.visible {
+  box-shadow: 0 8px 24px rgba(40, 183, 69, 0.3);
+}
+
+.contact-page .contact-form .form-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: var(--color-primary-dark);
+}
+
+.contact-page .contact-form input,
+.contact-page .contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: var(--font-base);
+  color: var(--color-secondary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  resize: vertical;
+}
+
+.contact-page .contact-form input:focus,
+.contact-page .contact-form textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px var(--color-primary);
+  outline: none;
+}
+
+.contact-page .contact-form button {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  width: 100%;
+  transition: background-color var(--transition-fast);
+  box-shadow: 0 4px 12px var(--color-primary);
+}
+
+.contact-page .contact-form button:hover,
+.contact-page .contact-form button:focus {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 6px 18px var(--color-primary-dark);
+}
+
+/* =============================
+   Text Centered Footer Note
+============================= */
+.contact-page .text-center p.small {
+  font-style: italic;
+  margin-top: 3rem;
+  color: var(--color-muted);
+}
+
+/* =============================
+   Location Section
+============================= */
+.contact-page .locations {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.contact-page .location-card {
+  background: #ffffff;
+  padding: 1.8rem 1.6rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 3px 10px var(--color-shadow);
+  transition: box-shadow var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-page .location-card:hover,
+.contact-page .location-card.animate-on-scroll.visible {
+  box-shadow: 0 10px 30px rgba(40, 183, 69, 0.35);
+}
+
+.contact-page .location-card h4 {
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-dark);
+}
+
+.contact-page .location-card p {
+  margin-bottom: 0.6rem;
+}
+
+.contact-page .location-card iframe {
+  border-radius: var(--radius);
+  border: none;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow var(--transition-fast);
+}
+
+.contact-page .location-card iframe:hover {
+  box-shadow: 0 4px 14px rgba(40, 183, 69, 0.4);
+}
+
+/* =============================
+   Buttons inside Location Cards
+============================= */
+.contact-page .location-card .btn {
+  font-weight: 600;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.contact-page .location-card .btn-outline-success {
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  background: transparent;
+}
+
+.contact-page .location-card .btn-outline-success:hover,
+.contact-page .location-card .btn-outline-success:focus {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary-dark);
+}
+
+.contact-page .location-card .btn-success {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 2px solid var(--color-primary);
+}
+
+.contact-page .location-card .btn-success:hover,
+.contact-page .location-card .btn-success:focus {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+/* =============================
+   Responsive tweaks
+============================= */
+@media (max-width: 767px) {
+  .contact-page .contact-info-card,
+  .contact-page .contact-form,
+  .contact-page .location-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .contact-page h2 {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,200 @@
+{% extends "layout.html" %} {% load static %} {% block styles %}
+<link rel="stylesheet" href="{% static 'styles/contact.css' %}" />
+{% endblock %} {% block content %}
+<section class="contact-page bg-white text-block">
+  <!-- HERO SECTION -->
+  <section class="contact-hero text-center">
+    <div class="container position-relative z-2">
+      <i class="bi bi-envelope-paper-heart hero-icon"></i>
+      <h1 class="hero-title">Get in Touch</h1>
+      <p class="lead hero-subtitle">
+        Let’s connect — for training, technology, or creative solutions. We’re
+        here to help you grow.
+      </p>
+    </div>
+    <div class="hero-overlay"></div>
+  </section>
+
+  <!-- CONTACT INFO + FORM -->
+  <div class="container section-padding">
+    <div class="row g-5 align-items-start">
+      <!-- CONTACT INFO CARD -->
+      <div class="col-md-5">
+        <div class="contact-info-card animate-on-scroll">
+          <h4>Our Offices</h4>
+          <p>
+            <strong>EMS SKYNET KREA8TIVE CONCEPT / Computer Institute</strong
+            ><br />
+            No. 2 Kofo Abayomi Street, Victoria Island, Lagos.<br />
+            <strong>Phone:</strong> 07030077529, +2348155580442 <br />
+            <strong>Email:</strong> emsskynet@gmail.com
+          </p>
+          <hr />
+          <p>
+            <strong>EMS Skynet Training Center</strong><br />
+            No. 2 Kofo Abayomi Street, Victoria Island, Lagos.<br />
+            <strong>Phone:</strong> 07030077529, +2348155580442 <br />
+            <strong>Email:</strong> training@emsskynet.com
+          </p>
+          <hr />
+          <h5>Opening Hours</h5>
+          <ul class="list-unstyled mb-0">
+            <li>Mon – Fri: 8:30 am – 5:00 pm</li>
+            <li>Saturday: 10:00 am – 5:00 pm</li>
+            <li>Sunday: Closed</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="col-md-7">
+        <form class="contact-form animate-on-scroll">
+          <h3 class="text-accent mb-4">Send Us a Message</h3>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              id="message"
+              class="form-control"
+              rows="5"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent w-100">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 animate-on-scroll">
+      <p class="small text-muted">
+        “Tackling computer illiteracy, one skill at a time.” — EMS SKYNET
+        KREA8TIVE CONCEPT
+      </p>
+    </div>
+  </div>
+
+  <!-- LOCATION SECTION -->
+  <section class="locations container section-padding">
+    <h2 class="text-center mb-5">Our Locations & Quick Actions</h2>
+    <div class="row g-4">
+      <!-- Location 1 -->
+      <div class="col-md-6">
+        <div class="location-card shadow-sm animate-on-scroll">
+          <h4>EMS SKYNET KREA8TIVE CONCEPT</h4>
+          <p><strong>Type:</strong> Business Center</p>
+          <p>
+            <strong>Address:</strong> 2A Kofo Abayomi Street, Victoria Island,
+            Lagos
+          </p>
+          <p><strong>Hours:</strong> 8:30 am – 5:00 pm (Mon – Fri)</p>
+
+          <iframe
+            src="https://www.google.com/maps?q=2A+Kofo+Abayomi+Street,+Victoria+Island,+Lagos&output=embed"
+            width="100%"
+            height="200"
+            style="border: 0; margin-bottom: 10px"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+
+          <div class="d-flex gap-2 flex-wrap">
+            <a
+              href="tel:+2347030077529"
+              class="btn btn-outline-success flex-fill"
+              >📞 Call</a
+            >
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=2A+Kofo+Abayomi+Street,+Victoria+Island,+Lagos"
+              target="_blank"
+              class="btn btn-success flex-fill"
+              >🗺️ Directions</a
+            >
+            <a
+              href="https://wa.me/2347030077529"
+              target="_blank"
+              class="btn btn-success flex-fill"
+              >💬 WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Location 2 -->
+      <div class="col-md-6">
+        <div class="location-card shadow-sm animate-on-scroll">
+          <h4>EMS Skynet Training Center</h4>
+          <p><strong>Type:</strong> Training Center</p>
+          <p>
+            <strong>Address:</strong> POWA SHOPPING COMPLEX NEAR MRS FILLING
+            STATION BAR BEACH BUSSTOP AHMADU BELLO STREET VICTORIA ISLAND LAGOS
+          </p>
+          <p><strong>Hours:</strong> 9:00 am – 5:00 pm (Mon – Fri)</p>
+
+          <!-- <iframe
+            src="https://www.google.com/maps?q=5+Adeola+Odeku+Street,+Victoria+Island,+Lagos&output=embed"
+            width="100%"
+            height="200"
+            style="border: 0; margin-bottom: 10px"
+            allowfullscreen
+            loading="lazy"
+          ></iframe> -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1762792230542!6m8!1m7!1s8NnHNABcrXfWutYdW_hxeA!2m2!1d6.422716596053246!2d3.411290956171632!3f48.926088965469695!4f-3.612849061252362!5f0.7820865974627469"
+            width="100%"
+            height="200"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+
+          <div class="d-flex gap-2 flex-wrap">
+            <a
+              href="tel:+2348050261685"
+              class="btn btn-outline-success flex-fill"
+              >📞 Call</a
+            >
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=5+Adeola+Odeku+Street,+Victoria+Island,+Lagos"
+              target="_blank"
+              class="btn btn-success flex-fill"
+              >🗺️ Directions</a
+            >
+            <a
+              href="https://wa.me/2349053881301"
+              target="_blank"
+              class="btn btn-success flex-fill"
+              >💬 WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+{% endblock %} {% block scripts %}
+<script src="{% static 'javascript/contact.js' %}"></script>
+{% endblock %}
